@@ -1,24 +1,41 @@
 import Section from "components/Section/Section";
 import Profile from "components/Profile/Profile"
-import user from 'components/Profile/user'
+import profileData from 'data/Profile/user'
 import Statistics from "components/Statistics/Statistics";
-import data from 'components/Statistics/data'
+import statisticsData from 'data/Statictics/data'
+import FriendList from "components/FriendList/FriendList";
+import friendsData from 'data/Friends/friends'
+import FriendsListItem from "components/FriendsListItem/FriendsListItem";
+import TransactionHistory from "components/TransactionHistory/TransactionHistory";
+import transactions from 'data/TransactionHistory/transactions'
 
 export const App = () => {
   return (
     <>
     <Section title='Task 01 - Profile'>
          <Profile
-      username={user.username}
-  tag={user.tag}
-  location={user.location}
-  avatar={user.avatar}
-  stats={user.stats}/>
+      username={profileData.username}
+  tag={profileData.tag}
+  location={profileData.location}
+  avatar={profileData.avatar}
+  stats={profileData.stats}/>
       </Section>
       <Section title='Task 02 - Statistics'>
         <Statistics
-          stats={data}
+          stats={statisticsData}
           title='Upload stats'
+        />
+      </Section>
+      <Section title='Task 03 - Friends list'>
+        <FriendList>
+          <FriendsListItem
+          friends = {friendsData}
+          />
+        </FriendList>
+      </Section>
+       <Section title='Task 04 - Transaction history'>
+        <TransactionHistory
+        transactions = {transactions}
         />
     </Section>
     </>
