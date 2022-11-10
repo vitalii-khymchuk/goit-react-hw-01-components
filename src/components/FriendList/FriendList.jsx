@@ -1,14 +1,10 @@
-import PropTypes from 'prop-types'
-import css from 'components/FriendList/FriendList.module.css'
+import PropTypes from 'prop-types';
+import { FriendsList } from './FriendsList.styled';
 
-export default function FriendList({children}) {
-    return (
-        <ul className={css.friendList}>
-{children}
-</ul>
-    )
+export default function FriendList({ children }) {
+  return <FriendsList>{children}</FriendsList>;
 }
 
 FriendList.propTypes = {
-    children: PropTypes.node,
-}
+  children: PropTypes.node,
+};

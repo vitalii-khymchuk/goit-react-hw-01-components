@@ -1,3 +1,5 @@
+/* Я не став переробляти цю секцію на styled components, тому що таблиця була скачана з готовими класами і стилями */
+
 .datagrid {
   display: flex;
   justify-content: center;

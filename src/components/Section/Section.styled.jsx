@@ -1,4 +1,6 @@
-.section {
+import styled from '@emotion/styled';
+
+export const SectionTag = styled.section`
   max-width: 720px;
   margin-left: auto;
   margin-right: auto;
@@ -8,10 +10,10 @@
   padding-bottom: 30px;
 
   background-color: aquamarine;
-}
+`;
 
-.title {
+export const SectionTitle = styled.h2`
   display: flex;
   justify-content: center;
   padding: 10px;
-}
+`;
