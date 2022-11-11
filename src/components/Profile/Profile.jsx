@@ -1,25 +1,39 @@
 import PropTypes from 'prop-types';
 import {
-  ProfileCard,
   Avatar,
-  Info,
   Name,
-  Stats,
+  ProfileText,
   StatsItem,
   StatsNumber,
 } from './Profile.styled';
+import { Box } from 'components/Box.styled';
 
 export default function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <ProfileCard>
-      <Info>
+    <Box
+      display="flex"
+      alignItems="center"
+      flexDirection="column"
+      bg="componentBgColor"
+      borderRadius="2px"
+      border="default"
+      mx="auto"
+      width="250px"
+    >
+      <Box
+        display="flex"
+        alignItems="center"
+        flexDirection="column"
+        my={3}
+        mx="auto"
+      >
         <Avatar src={avatar} alt={`${username}'s avatar`} />
         <Name>{username}</Name>
-        <p>{`@${tag}`}</p>
-        <p>{location}</p>
-      </Info>
+        <ProfileText>{`@${tag}`}</ProfileText>
+        <ProfileText>{location}</ProfileText>
+      </Box>
 
-      <Stats>
+      <Box width="100%" display="flex" justifyContent="space-around" bg="azure">
         <StatsItem>
           <span>Followers</span>
           <StatsNumber>{stats.followers}</StatsNumber>
@@ -32,8 +46,8 @@ export default function Profile({ username, tag, location, avatar, stats }) {
           <span>Likes</span>
           <StatsNumber>{stats.likes}</StatsNumber>
         </StatsItem>
-      </Stats>
-    </ProfileCard>
+      </Box>
+    </Box>
   );
 }
 

@@ -1,18 +1,4 @@
-import styled from '@emotion/styled';
-
-export const ProfileCard = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  width: 250px;
-  margin-right: auto;
-  margin-left: auto;
-
-  background-color: #fff;
-  border-radius: 3px;
-  border: 1px solid rgb(40, 208, 208);
-`;
+import styled from '@emotion/styled/macro';
 
 export const Avatar = styled.img`
   display: block;
@@ -21,44 +7,23 @@ export const Avatar = styled.img`
   width: 100px;
 `;
 
-export const Info = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+export const ProfileText = styled.p`
+  text-align: center;
+  font-size: ${p => p.theme.fontSizes[1]}px;
+  color: ${p => p.theme.colors.secondaryTextColor};
 
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: auto;
-  margin-left: auto;
-
-  & p {
-    text-align: center;
-    font-size: 14px;
-    color: grey;
-
-    margin-top: 4px;
-    margin-bottom: 4px;
-  }
+  margin-top: ${p => p.theme.space[1]}px;
+  margin-bottom: ${p => p.theme.space[1]}px;
 `;
 
 export const Name = styled.p`
-  div & {
-    font-size: 18px;
-    font-weight: 600;
-
-    color: black;
-  }
+  ${ProfileText};
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.semiBold};
+  color: ${p => p.theme.colors.mainTextColor};
 `;
 
-export const Stats = styled.ul`
-  width: 100%;
-
-  display: flex;
-  justify-content: space-around;
-
-  background-color: azure;
-`;
-
+// Чи краще було li зробити як Box компонент?
 export const StatsItem = styled.li`
   width: 100%;
   height: 60px;
@@ -67,15 +32,15 @@ export const StatsItem = styled.li`
   justify-content: center;
   align-items: center;
 
-  border: 1px solid rgb(40, 208, 208);
-  font-size: 14px;
-  color: grey;
+  border: ${p => p.theme.borders.default};
+  font-size: ${p => p.theme.fontSizes[1]}px;
+  color: ${p => p.theme.colors.secondaryTextColor};
 `;
 
 export const StatsNumber = styled.span`
-  margin-top: 4px;
+  margin-top: ${p => p.theme.space[1]}px;
 
-  font-size: 18px;
-  font-weight: 600;
-  color: black;
+  font-size: ${p => p.theme.fontSizes[3]}px;
+  font-weight: ${p => p.theme.fontWeights.semiBold};
+  color: ${p => p.theme.colors.mainTextColor};
 `;

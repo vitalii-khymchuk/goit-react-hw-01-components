@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
-import { FriendsList } from './FriendsList.styled';
+import { Box } from 'components/Box.styled';
 
 export default function FriendList({ children }) {
-  return <FriendsList>{children}</FriendsList>;
+  return (
+    <Box as="ul" display="flex" flexDirection="column" alignItems="center">
+      {children}
+    </Box>
+  );
 }
 
 FriendList.propTypes = {

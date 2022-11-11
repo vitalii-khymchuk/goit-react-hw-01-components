@@ -1,12 +1,20 @@
 import PropTypes from 'prop-types';
-import { SectionTag, SectionTitle } from './Section.styled';
+import { SectionTitle } from './Section.styled';
+import { Box } from 'components/Box.styled';
 
 export default function Section({ title, children }) {
   return (
-    <SectionTag>
+    <Box
+      as="section"
+      bg="sectionBgColor"
+      mx="auto"
+      maxWidth="720px"
+      px={2}
+      py={4}
+    >
       {title && <SectionTitle>{title}</SectionTitle>}
       {children}
-    </SectionTag>
+    </Box>
   );
 }
 

@@ -1,17 +1,19 @@
 import PropTypes from 'prop-types';
-import {
-  StatisticsWrap,
-  Title,
-  Categories,
-  StatItem,
-  Label,
-} from './Statistics.styled';
+import { Box } from 'components/Box.styled';
+import { Title, StatItem, Label } from './Statistics.styled';
 import randomHexColor from 'utils/randomHexColor';
 export default function Statistics({ stats, title }) {
   return (
-    <StatisticsWrap>
+    <Box
+      display="flex"
+      alignItems="center"
+      flexDirection="column"
+      bg="componentBgColor"
+      mx="auto"
+      width="300px"
+    >
       <Title>{title.toUpperCase()}</Title>
-      <Categories>
+      <Box as="ul" display="flex" width="100%" height="60px">
         {stats.map(({ id, label, percentage }) => {
           return (
             <StatItem style={{ backgroundColor: randomHexColor() }} key={id}>
@@ -20,8 +22,8 @@ export default function Statistics({ stats, title }) {
             </StatItem>
           );
         })}
-      </Categories>
-    </StatisticsWrap>
+      </Box>
+    </Box>
   );
 }
 
