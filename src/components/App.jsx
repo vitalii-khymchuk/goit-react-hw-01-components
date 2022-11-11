@@ -3,9 +3,8 @@ import Profile from 'components/Profile/Profile';
 import profileData from 'data/Profile/user';
 import Statistics from 'components/Statistics/Statistics';
 import statisticsData from 'data/Statictics/data';
-import FriendList from 'components/FriendList/FriendList';
+import Friends from 'components/FriendList/Friends';
 import friendsData from 'data/Friends/friends';
-import FriendsListItem from 'components/FriendsListItem/FriendsListItem';
 import TransactionHistory from 'components/TransactionHistory/TransactionHistory';
 import transactions from 'data/TransactionHistory/transactions';
 
@@ -25,9 +24,7 @@ export const App = () => {
         <Statistics stats={statisticsData} title="Upload stats" />
       </Section>
       <Section title="Task 03 - Friends list">
-        <FriendList>
-          <FriendsListItem friends={friendsData} />
-        </FriendList>
+        <Friends friends={friendsData} />
       </Section>
       <Section title="Task 04 - Transaction history">
         <TransactionHistory transactions={transactions} />
